@@ -1,4 +1,11 @@
 # Mini-Project-PDF-Splitter 
+A lightweight and efficient Python script to split a PDF file into two parts at any specified page. It uses PyPDF2 to handle PDF operations and is perfect for quickly segmenting large documents.
+
+## Ideal Use Cases
+- Splitting a large eBook or PDF into chapters
+- Extracting specific sections of technical papers
+- Separating confidential pages from the rest of a document
+- Quickly generating partial PDFs for printing or sharing
 
 ## Usage
 ```mermaid
