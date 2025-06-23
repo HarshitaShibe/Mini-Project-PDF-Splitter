@@ -1,6 +1,8 @@
 # Mini-Project-PDF-Splitter 
 
 ## Usage
+### 📊 PDF Splitter Flowchart (Mermaid)
+
 ```mermaid
 flowchart TD
     A[Start Script] --> B[Check if __name__ == "__main__"]
@@ -30,6 +32,9 @@ flowchart TD
 
     D13 --> Z[End]
 
+
+
+  
 
 
 
