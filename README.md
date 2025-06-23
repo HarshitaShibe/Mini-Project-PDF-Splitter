@@ -1,33 +1,48 @@
 # Mini-Project-PDF-Splitter 
 
-## Usage
+# Usage
 ```mermaid
-flowchart TD
-    A(Start script) --> B{Run directly?}
-    B -->|Yes| C[Ask for split page number]
-    C --> D[Call split_pdf()]
+flowchart TB
+    Start([Start Script])
+    Check{Is script run directly?}
+    Input[Prompt for split page number]
+    Call[Call split_pdf()]
 
-    subgraph split_pdf Function
-        D1{Output folder exists?}
-        D1 -->|No| D2[Create output folder]
-        D1 -->|Yes| D3[Open input PDF]
-        D2 --> D3
-        D3 --> D4[Count total pages]
-        D4 --> D5{Is page number valid?}
-        D5 -->|No| E1[Raise error and exit]
-        D5 -->|Yes| D6[Init two PDF writers]
-        D6 --> D7[Loop over pages]
-        D7 --> D8{Before split page?}
-        D8 -->|Yes| D9[Add to part1]
-        D8 -->|No| D10[Add to part2]
-        D9 --> D7
-        D10 --> D7
-        D7 -->|Done| D11[Save part1.pdf]
-        D11 --> D12[Save part2.pdf]
-        D12 --> D13[Print output paths]
-    end
+    DirCheck{Does output folder exist?}
+    CreateDir[Create output folder]
+    OpenPDF[Open input PDF]
+    CountPages[Count total pages]
+    Validate{Is split page valid?}
+    Error[Raise ValueError and exit]
+    InitWriters[Initialize two PdfWriter objects]
+    LoopPages[Loop through all pages]
+    CheckPage{Page before split point?}
+    AddPart1[Add page to part1_writer]
+    AddPart2[Add page to part2_writer]
+    SavePart1[Write part1.pdf]
+    SavePart2[Write part2.pdf]
+    PrintPaths[Print output paths]
+    End([End Script])
 
-    D13 --> Z(End)
+    Start --> Check
+    Check -->|Yes| Input
+    Input --> Call
+    Call --> DirCheck
+    DirCheck -->|No| CreateDir --> OpenPDF
+    DirCheck -->|Yes| OpenPDF
+    OpenPDF --> CountPages
+    CountPages --> Validate
+    Validate -->|No| Error
+    Validate -->|Yes| InitWriters
+    InitWriters --> LoopPages
+    LoopPages --> CheckPage
+    CheckPage -->|Yes| AddPart1 --> LoopPages
+    CheckPage -->|No| AddPart2 --> LoopPages
+    LoopPages --> SavePart1
+    SavePart1 --> SavePart2
+    SavePart2 --> PrintPaths
+    PrintPaths --> End
+
 
 
 
