@@ -1,23 +1,7 @@
 # Mini-Project-PDF-Splitter 
 
-## Features
-- Split any PDF file at a user-defined page
-- Automatically saves both parts as new PDF files
-- Creates output folder if it doesn’t exist
-- Clear and customizable code structure
-
-## Folder Structure
- .
-├── split_pdf.py        # Main script
-├── /content
-│   ├── Research (1).pdf    # Input PDF (example)
-│   └── /output             # Folder for output files
-
-## Requirements
-- Python 3.x
-- PyPDF2
-
 ## Usage
+```mermaid
 flowchart TD
     A[Start Script] --> B[Check if __name__ == "__main__"]
     B --> C[Prompt user for split page number]
@@ -45,5 +29,10 @@ flowchart TD
     end
 
     D13 --> Z[End]
+
+
+
+
+    
 
 
