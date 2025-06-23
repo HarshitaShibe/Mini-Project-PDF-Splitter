@@ -6,7 +6,7 @@ flowchart TB
     Start([Start Script])
     Check{Is script run directly?}
     Input[Prompt for split page number]
-    Call[Call split_pdf()]
+    Call[Call split_pdf function]
 
     DirCheck{Does output folder exist?}
     CreateDir[Create output folder]
