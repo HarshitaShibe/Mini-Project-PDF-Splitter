@@ -1,6 +1,6 @@
 # Mini-Project-PDF-Splitter 
 
-# Usage
+## Usage
 ```mermaid
 flowchart TB
     Start([Start Script])
@@ -42,6 +42,7 @@ flowchart TB
     SavePart1 --> SavePart2
     SavePart2 --> PrintPaths
     PrintPaths --> End
+
 
 
 
